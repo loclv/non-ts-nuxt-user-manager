@@ -1,6 +1,8 @@
-# non-ts-nuxt-user-manager
+# User manager
 
 User manager Nuxt without TypeScript for training. 💪
+
+![nuxt icon](static/favicon.ico)
 
 ## 🧑🏿‍💻 Build Setup
 
