@@ -1,8 +1,8 @@
 # non-ts-nuxt-user-manager
 
-User manager Nuxt without TypeScript for training.
+User manager Nuxt without TypeScript for training. 💪
 
-## Build Setup
+## 🧑🏿‍💻 Build Setup
 
 ```bash
 # install dependencies
@@ -10,6 +10,9 @@ yarn
 
 # serve with hot reload at localhost:3000
 yarn dev
+
+yarn lint
+yarn test
 
 # build for production and launch server
 yarn build
@@ -20,6 +23,8 @@ yarn g
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+---
 
 ## Special Directories
 
