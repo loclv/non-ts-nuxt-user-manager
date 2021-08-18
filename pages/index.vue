@@ -1,6 +1,6 @@
 <template>
   <main>
-    <v-app-bar app></v-app-bar>
+    <v-app-bar app dark></v-app-bar>
 
     <v-main>
       <v-container>
