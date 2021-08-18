@@ -1,12 +1,17 @@
 <template>
   <main>
-    <h1>User manager</h1>
-    <NuxtLink to="/about">
-      About (internal link that belongs to the Nuxt App)
-    </NuxtLink>
+    <v-app-bar app></v-app-bar>
+
+    <v-main>
+      <v-container>
+        <h1>User manager</h1>
+
+        <SimpleTable></SimpleTable>
+        <NuxtLink to="/about">About</NuxtLink>
+      </v-container>
+    </v-main>
   </main>
 </template>
 
 <script>
-export default {}
 </script>

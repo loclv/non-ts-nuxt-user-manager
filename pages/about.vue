@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <h1>About this application</h1>
-    <p>This is a simple user manager website</p>
-  </div>
+  <v-main>
+    <v-container>
+      <h1>About this application</h1>
+
+      <p>This is a simple user manager website</p>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
@@ -14,10 +17,10 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'This is a simple user manager website'
-        }
-      ]
+          content: 'This is a simple user manager website',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
