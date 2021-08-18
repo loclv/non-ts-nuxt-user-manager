@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th class="text-left">Name</th>
-          <th class="text-left">Calories</th>
+          <th class="text-left">Gender</th>
         </tr>
       </thead>
 
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-const GendersEnum = { woman: 'woman', man: 'man', other: 'other' }
+import { GendersEnum } from '@/utilities/model/user'
 
 export default {
   data() {
@@ -27,43 +27,43 @@ export default {
       users: [
         {
           name: 'Frozen Yogurt',
-          gender: GendersEnum.woman,
+          gender: GendersEnum.WOMAN,
         },
         {
           name: 'Ice cream sandwich',
-          gender: GendersEnum.man,
+          gender: GendersEnum.MAN,
         },
         {
           name: 'Eclair',
-          gender: GendersEnum.other,
+          gender: GendersEnum.OTHER,
         },
         {
           name: 'Cupcake',
-          gender: GendersEnum.woman,
+          gender: GendersEnum.WOMAN,
         },
         {
           name: 'Gingerbread',
-          gender: GendersEnum.other,
+          gender: GendersEnum.OTHER,
         },
         {
           name: 'Jelly bean',
-          gender: GendersEnum.man,
+          gender: GendersEnum.MAN,
         },
         {
           name: 'Lollipop',
-          gender: GendersEnum.man,
+          gender: GendersEnum.MAN,
         },
         {
           name: 'Honeycomb',
-          gender: GendersEnum.other,
+          gender: GendersEnum.OTHER,
         },
         {
           name: 'Donut',
-          gender: GendersEnum.woman,
+          gender: GendersEnum.WOMAN,
         },
         {
           name: 'KitKat',
-          gender: GendersEnum.man,
+          gender: GendersEnum.MAN,
         },
       ],
     }
