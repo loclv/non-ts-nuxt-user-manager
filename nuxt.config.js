@@ -36,7 +36,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['nuxt-webfontloader'],
+  webfontloader: {
+    google: {
+      families: ['Lato:400,700'], // Loads Lato font with weights 400 and 700
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
