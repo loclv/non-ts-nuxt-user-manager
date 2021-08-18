@@ -6,7 +6,8 @@
       <v-container>
         <h1>User manager</h1>
 
-        <SimpleTable></SimpleTable>
+        <p>Users number: {{ users.length }}</p>
+        <SimpleTable :users="users"></SimpleTable>
         <NuxtLink to="/about">About</NuxtLink>
       </v-container>
     </v-main>
@@ -14,6 +15,56 @@
 </template>
 
 <script>
+import { GendersEnum } from '@/utilities/model/user'
+
+export default {
+  data() {
+    return {
+      users: [
+        {
+          name: 'Frozen Yogurt',
+          gender: GendersEnum.WOMAN,
+        },
+        {
+          name: 'Ice cream sandwich',
+          gender: GendersEnum.MAN,
+        },
+        {
+          name: 'Eclair',
+          gender: GendersEnum.OTHER,
+        },
+        {
+          name: 'Cupcake',
+          gender: GendersEnum.WOMAN,
+        },
+        {
+          name: 'Gingerbread',
+          gender: GendersEnum.OTHER,
+        },
+        {
+          name: 'Jelly bean',
+          gender: GendersEnum.MAN,
+        },
+        {
+          name: 'Lollipop',
+          gender: GendersEnum.MAN,
+        },
+        {
+          name: 'Honeycomb',
+          gender: GendersEnum.OTHER,
+        },
+        {
+          name: 'Donut',
+          gender: GendersEnum.WOMAN,
+        },
+        {
+          name: 'KitKat',
+          gender: GendersEnum.MAN,
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style>
