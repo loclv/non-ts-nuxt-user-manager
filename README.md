@@ -7,6 +7,7 @@ Using:
 ![nuxt icon](static/favicon.ico)
 
 - [Vuetify Module for Nuxt.js](https://github.com/nuxt-community/vuetify-module)
+- [nuxt-webfontloader](https://github.com/Developmint/nuxt-webfontloader)
 
 ## 🧑🏿‍💻 Build Setup
 
