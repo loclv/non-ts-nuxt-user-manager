@@ -9,9 +9,9 @@
       </thead>
 
       <tbody>
-        <tr v-for="item in desserts" :key="item.name">
+        <tr v-for="item in users" :key="item.name">
           <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.gender }}</td>
         </tr>
       </tbody>
     </template>
@@ -19,49 +19,51 @@
 </template>
 
 <script>
+const GendersEnum = { woman: 'woman', man: 'man', other: 'other' }
+
 export default {
   data() {
     return {
-      desserts: [
+      users: [
         {
           name: 'Frozen Yogurt',
-          calories: 159,
+          gender: GendersEnum.woman,
         },
         {
           name: 'Ice cream sandwich',
-          calories: 237,
+          gender: GendersEnum.man,
         },
         {
           name: 'Eclair',
-          calories: 262,
+          gender: GendersEnum.other,
         },
         {
           name: 'Cupcake',
-          calories: 305,
+          gender: GendersEnum.woman,
         },
         {
           name: 'Gingerbread',
-          calories: 356,
+          gender: GendersEnum.other,
         },
         {
           name: 'Jelly bean',
-          calories: 375,
+          gender: GendersEnum.man,
         },
         {
           name: 'Lollipop',
-          calories: 392,
+          gender: GendersEnum.man,
         },
         {
           name: 'Honeycomb',
-          calories: 408,
+          gender: GendersEnum.other,
         },
         {
           name: 'Donut',
-          calories: 452,
+          gender: GendersEnum.woman,
         },
         {
           name: 'KitKat',
-          calories: 518,
+          gender: GendersEnum.man,
         },
       ],
     }
