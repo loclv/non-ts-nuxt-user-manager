@@ -2,7 +2,11 @@
 
 User manager Nuxt without TypeScript for training. 💪
 
+Using:
+
 ![nuxt icon](static/favicon.ico)
+
+- [Vuetify Module for Nuxt.js](https://github.com/nuxt-community/vuetify-module)
 
 ## 🧑🏿‍💻 Build Setup
 
