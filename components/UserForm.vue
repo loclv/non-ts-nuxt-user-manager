@@ -29,6 +29,11 @@
 <script>
 import { GendersEnum } from '@/utilities/model'
 
+const genders = []
+for (const property in GendersEnum) {
+  genders.push(GendersEnum[property])
+}
+
 export default {
   data() {
     return {
@@ -39,7 +44,7 @@ export default {
         (v) => v.length <= 10 || 'Name must be less than 10 characters',
       ],
       select: null,
-      items: [GendersEnum.WOMAN, GendersEnum.MAN, GendersEnum.OTHER],
+      items: genders,
     }
   },
 }
