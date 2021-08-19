@@ -11,9 +11,11 @@
         <UserCount title="Man users" :count="manCount"></UserCount>
         <UserCount title="Other users" :count="otherCount"></UserCount>
 
-        <MenuBtn title="Add" icon="mdi-account-plus"></MenuBtn>
-        <MenuBtn title="Edit" icon="mdi-account-edit"></MenuBtn>
-        <MenuBtn title="Delete" icon="mdi-delete"></MenuBtn>
+        <v-card class="menu" dark>
+          <MenuBtn title="Add" icon="mdi-account-plus" color="indigo"></MenuBtn>
+          <MenuBtn title="Edit" icon="mdi-account-edit" color="pink"></MenuBtn>
+          <MenuBtn title="Delete" icon="mdi-delete" color="pink"></MenuBtn>
+        </v-card>
 
         <SimpleTable :users="users"></SimpleTable>
 
@@ -49,3 +51,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.menu {
+  height: 64px;
+  margin-bottom: 6px;
+}
+</style>
