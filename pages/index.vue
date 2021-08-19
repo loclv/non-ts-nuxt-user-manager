@@ -8,9 +8,9 @@
       <v-main dark>
         <v-container dark>
           <UserCount title="Users" :count="users.length"></UserCount>
-          <UserCount title="Woman users" :count="womanCount"></UserCount>
-          <UserCount title="Man users" :count="manCount"></UserCount>
-          <UserCount title="Other users" :count="otherCount"></UserCount>
+          <UserCount title="💃 Woman users" :count="womanCount"></UserCount>
+          <UserCount title="🍺 Man users" :count="manCount"></UserCount>
+          <UserCount title="🏳️‍🌈 Other users" :count="otherCount"></UserCount>
 
           <v-card class="menu" dark>
             <MenuBtn
@@ -70,15 +70,6 @@ export default {
 <style>
 .menu {
   margin-bottom: 6px;
-}
-
-:root {
-  --color: #ebf4f1;
-  --color-primary: #8affd5;
-  --color-secondary: #fdf9f3;
-  --bg: #575757;
-  --bg-secondary: #4a4a4a;
-  --border-color: #707070;
 }
 
 .v-main {

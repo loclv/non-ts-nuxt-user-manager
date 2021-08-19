@@ -22,6 +22,10 @@
           ></v-select>
         </v-col>
       </v-row>
+
+      <v-btn :disabled="!valid" color="success" class="" @click="validate">
+        Submit
+      </v-btn>
     </v-container>
   </v-form>
 </template>
@@ -46,6 +50,14 @@ export default {
       select: null,
       items: genders,
     }
+  },
+
+  methods: {
+    validate() {
+      if (this.$refs.form.validate()) {
+        this.$emit('submitted', { name: this.name, gender: this.select })
+      }
+    },
   },
 }
 </script>

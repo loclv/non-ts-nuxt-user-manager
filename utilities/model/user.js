@@ -1,5 +1,5 @@
 export const GendersEnum = Object.freeze({
-  WOMAN: 'woman',
-  MAN: 'man',
-  OTHER: 'other',
+  WOMAN: '💃 woman',
+  MAN: '🍺 man',
+  OTHER: '🏳️‍🌈 other',
 })
