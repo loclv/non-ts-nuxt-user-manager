@@ -12,9 +12,17 @@
         <UserCount title="Other users" :count="otherCount"></UserCount>
 
         <v-card class="menu" dark>
-          <MenuBtn title="Add" icon="mdi-account-plus" color="indigo"></MenuBtn>
-          <MenuBtn title="Edit" icon="mdi-account-edit" color="pink"></MenuBtn>
-          <MenuBtn title="Delete" icon="mdi-delete" color="pink"></MenuBtn>
+          <MenuBtn
+            title="Add"
+            icon="mdi-account-plus"
+            color="#6200EA"
+          ></MenuBtn>
+          <MenuBtn
+            title="Edit"
+            icon="mdi-account-edit"
+            color="#00ACC1"
+          ></MenuBtn>
+          <MenuBtn title="Delete" icon="mdi-delete" color="#F4511E"></MenuBtn>
         </v-card>
 
         <SimpleTable :users="users"></SimpleTable>

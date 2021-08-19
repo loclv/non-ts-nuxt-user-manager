@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="menu-item" color="indigo" dark>
+  <v-btn class="menu-item" :style="{ backgroundColor: color }" dark>
     {{ title }}
     <v-icon dark right>{{ icon }}</v-icon>
   </v-btn>
