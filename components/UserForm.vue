@@ -6,7 +6,7 @@
           <v-text-field
             v-model="name"
             :rules="nameRules"
-            :counter="10"
+            :counter="nameMaxLength"
             label="Name"
             required
           ></v-text-field>
@@ -38,14 +38,19 @@ for (const property in GendersEnum) {
   genders.push(GendersEnum[property])
 }
 
+const nameMaxLength = 36
+
 export default {
   data() {
     return {
+      nameMaxLength,
       valid: false,
       name: '',
       nameRules: [
         (v) => !!v || 'Name is required',
-        (v) => v.length <= 10 || 'Name must be less than 10 characters',
+        (v) =>
+          v.length <= nameMaxLength ||
+          `Name must be less than ${nameMaxLength} characters`,
       ],
       select: null,
       items: genders,

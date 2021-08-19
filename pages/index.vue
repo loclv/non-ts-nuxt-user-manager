@@ -19,13 +19,20 @@
               title="Add"
               icon="mdi-account-plus"
               color="#6200EA"
+              @click="onAdd"
             ></MenuBtn>
             <MenuBtn
               title="Edit"
               icon="mdi-account-edit"
               color="#00ACC1"
+              @click="onEdit"
             ></MenuBtn>
-            <MenuBtn title="Delete" icon="mdi-delete" color="#F4511E"></MenuBtn>
+            <MenuBtn
+              title="Delete"
+              icon="mdi-delete"
+              color="#F4511E"
+              @click="onDelete"
+            ></MenuBtn>
 
             <UserForm v-show="isFormShow" @submitted="onSubmit"></UserForm>
           </v-card>
@@ -70,6 +77,9 @@ export default {
     onSubmit(user) {
       users.unshift({ ...user, id: users.length })
     },
+    onAdd() {},
+    onEdit() {},
+    onDelete() {},
   },
 }
 </script>
