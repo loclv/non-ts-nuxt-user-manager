@@ -3,8 +3,8 @@
     <template #default>
       <thead>
         <tr>
-          <th class="text-left">Name</th>
-          <th class="text-left">Gender</th>
+          <th class="text-left table-header">Name</th>
+          <th class="text-left table-header">Gender</th>
         </tr>
       </thead>
 
@@ -28,3 +28,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.table-header {
+  font-size: 18px !important;
+}
+</style>
