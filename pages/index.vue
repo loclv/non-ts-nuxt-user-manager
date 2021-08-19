@@ -8,7 +8,7 @@
       <v-main dark>
         <v-container dark>
           <div class="total-info-container">
-            <UserCount title="🧑‍🤝‍🧑 Users" :count="users.length"></UserCount>
+            <UserCount title="🧑‍🤝‍🧑 Users total" :count="users.length"></UserCount>
             <UserCount title="💃 Woman users" :count="womanCount"></UserCount>
             <UserCount title="🍺 Man users" :count="manCount"></UserCount>
             <UserCount title="🏳️‍🌈 Other users" :count="otherCount"></UserCount>
@@ -27,7 +27,7 @@
             ></MenuBtn>
             <MenuBtn title="Delete" icon="mdi-delete" color="#F4511E"></MenuBtn>
 
-            <UserForm v-show="isFormShow"></UserForm>
+            <UserForm v-show="isFormShow" @submitted="onSubmit"></UserForm>
           </v-card>
 
           <SimpleTable :users="users"></SimpleTable>
@@ -64,6 +64,11 @@ export default {
     },
     otherCount() {
       return countGender(this.users, GendersEnum.OTHER)
+    },
+  },
+  methods: {
+    onSubmit(user) {
+      users.unshift(user)
     },
   },
 }
