@@ -1,1 +1,5 @@
-export const GendersEnum = { WOMAN: 'woman', MAN: 'man', OTHER: 'other' }
+export const GendersEnum = Object.freeze({
+  WOMAN: 'woman',
+  MAN: 'man',
+  OTHER: 'other',
+})
