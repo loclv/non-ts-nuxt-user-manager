@@ -1,0 +1,27 @@
+:root {
+  --color: #ebf4f1;
+  --color-primary: #8affd5;
+  --color-secondary: #fdf9f3;
+  --bg: #575757;
+  --bg-secondary: #4a4a4a;
+  --border-color: #707070;
+}
+
+.sepia-mode {
+  --color: #433422;
+  --color-secondary: #504231;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  background-color: var(--bg);
+  color: var(--color);
+  transition: background-color 0.3s;
+}
+
+a {
+  color: var(--color-primary);
+}

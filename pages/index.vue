@@ -12,7 +12,9 @@
         <UserCount :title="'Other users'" :count="otherCount"></UserCount>
 
         <SimpleTable :users="users"></SimpleTable>
-        <NuxtLink to="/about">About</NuxtLink>
+        <v-container>
+          <NuxtLink to="/about">About</NuxtLink>
+        </v-container>
       </v-container>
     </v-main>
   </main>
@@ -42,9 +44,3 @@ export default {
   },
 }
 </script>
-
-<style>
-body {
-  font-family: Lato, sans-serif;
-}
-</style>
