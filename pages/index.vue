@@ -6,7 +6,11 @@
       <v-container>
         <h1>User manager</h1>
 
-        <p>Users number: {{ users.length }}</p>
+        <UserCount :title="'Users'" :count="users.length"></UserCount>
+        <UserCount :title="'Woman users'" :count="womanCount"></UserCount>
+        <UserCount :title="'Man users'" :count="manCount"></UserCount>
+        <UserCount :title="'Other users'" :count="otherCount"></UserCount>
+
         <SimpleTable :users="users"></SimpleTable>
         <NuxtLink to="/about">About</NuxtLink>
       </v-container>
@@ -15,54 +19,26 @@
 </template>
 
 <script>
-import { GendersEnum } from '@/utilities/model/user'
+import { GendersEnum } from '@/utilities/model'
+import { users } from '@/utilities/json'
+import { countGender } from '@/utilities'
 
 export default {
   data() {
     return {
-      users: [
-        {
-          name: 'Frozen Yogurt',
-          gender: GendersEnum.WOMAN,
-        },
-        {
-          name: 'Ice cream sandwich',
-          gender: GendersEnum.MAN,
-        },
-        {
-          name: 'Eclair',
-          gender: GendersEnum.OTHER,
-        },
-        {
-          name: 'Cupcake',
-          gender: GendersEnum.WOMAN,
-        },
-        {
-          name: 'Gingerbread',
-          gender: GendersEnum.OTHER,
-        },
-        {
-          name: 'Jelly bean',
-          gender: GendersEnum.MAN,
-        },
-        {
-          name: 'Lollipop',
-          gender: GendersEnum.MAN,
-        },
-        {
-          name: 'Honeycomb',
-          gender: GendersEnum.OTHER,
-        },
-        {
-          name: 'Donut',
-          gender: GendersEnum.WOMAN,
-        },
-        {
-          name: 'KitKat',
-          gender: GendersEnum.MAN,
-        },
-      ],
+      users,
     }
+  },
+  computed: {
+    womanCount() {
+      return countGender(this.users, GendersEnum.WOMAN)
+    },
+    manCount() {
+      return countGender(this.users, GendersEnum.MAN)
+    },
+    otherCount() {
+      return countGender(this.users, GendersEnum.OTHER)
+    },
   },
 }
 </script>
