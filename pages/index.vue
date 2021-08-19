@@ -1,11 +1,11 @@
 <template>
   <main>
-    <v-app-bar app dark></v-app-bar>
+    <v-app-bar app dark>
+      <v-toolbar-title>User manager</v-toolbar-title>
+    </v-app-bar>
 
     <v-main>
       <v-container>
-        <h1>User manager</h1>
-
         <UserCount :title="'Users'" :count="users.length"></UserCount>
         <UserCount :title="'Woman users'" :count="womanCount"></UserCount>
         <UserCount :title="'Man users'" :count="manCount"></UserCount>
