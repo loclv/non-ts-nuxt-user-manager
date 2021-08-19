@@ -6,12 +6,17 @@
 
     <v-main>
       <v-container>
-        <UserCount :title="'Users'" :count="users.length"></UserCount>
-        <UserCount :title="'Woman users'" :count="womanCount"></UserCount>
-        <UserCount :title="'Man users'" :count="manCount"></UserCount>
-        <UserCount :title="'Other users'" :count="otherCount"></UserCount>
+        <UserCount title="Users" :count="users.length"></UserCount>
+        <UserCount title="Woman users" :count="womanCount"></UserCount>
+        <UserCount title="Man users" :count="manCount"></UserCount>
+        <UserCount title="Other users" :count="otherCount"></UserCount>
+
+        <MenuBtn title="Add" icon="mdi-account-plus"></MenuBtn>
+        <MenuBtn title="Edit" icon="mdi-account-edit"></MenuBtn>
+        <MenuBtn title="Delete" icon="mdi-delete"></MenuBtn>
 
         <SimpleTable :users="users"></SimpleTable>
+
         <v-container>
           <NuxtLink to="/about">About</NuxtLink>
         </v-container>
