@@ -1,6 +1,6 @@
 import { GendersEnum } from '@/utilities/model'
 
-export const users = [
+const users = [
   {
     name: 'Frozen Yogurt',
     gender: GendersEnum.WOMAN,
@@ -42,3 +42,9 @@ export const users = [
     gender: GendersEnum.MAN,
   },
 ]
+
+for (let i = 0; i < users.length; i++) {
+  users[i].id = i
+}
+
+export { users }

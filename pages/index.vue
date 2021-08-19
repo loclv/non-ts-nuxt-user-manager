@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     onSubmit(user) {
-      users.unshift(user)
+      users.unshift({ ...user, id: users.length })
     },
   },
 }

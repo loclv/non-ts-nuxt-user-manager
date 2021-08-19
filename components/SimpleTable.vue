@@ -9,7 +9,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="item in users" :key="item.name">
+        <tr v-for="item in users" :key="item.id">
           <td>{{ item.name }}</td>
           <td>{{ item.gender }}</td>
         </tr>
