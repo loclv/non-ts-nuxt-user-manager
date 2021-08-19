@@ -1,5 +1,8 @@
 <template>
-  <p class="count-info">{{ title }} number: {{ count }}</p>
+  <div class="count-info">
+    <div class="d-flex justify-start align-center">{{ title }} number:</div>
+    <div class="d-flex justify-end align-center">{{ count }}</div>
+  </div>
 </template>
 
 <script>
@@ -19,8 +22,6 @@ export default {
 
 <style scoped>
 .count-info {
-  font-size: 16px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  font-size: 14px;
 }
 </style>

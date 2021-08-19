@@ -7,10 +7,12 @@
 
       <v-main dark>
         <v-container dark>
-          <UserCount title="Users" :count="users.length"></UserCount>
-          <UserCount title="💃 Woman users" :count="womanCount"></UserCount>
-          <UserCount title="🍺 Man users" :count="manCount"></UserCount>
-          <UserCount title="🏳️‍🌈 Other users" :count="otherCount"></UserCount>
+          <div class="total-info-container">
+            <UserCount title="🧑‍🤝‍🧑 Users" :count="users.length"></UserCount>
+            <UserCount title="💃 Woman users" :count="womanCount"></UserCount>
+            <UserCount title="🍺 Man users" :count="manCount"></UserCount>
+            <UserCount title="🏳️‍🌈 Other users" :count="otherCount"></UserCount>
+          </div>
 
           <v-card class="menu" dark>
             <MenuBtn
@@ -79,5 +81,9 @@ export default {
 
 a {
   color: var(--color-primary) !important;
+}
+
+.total-info-container {
+  width: 222px;
 }
 </style>
