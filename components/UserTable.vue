@@ -37,9 +37,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.table-header {
-  font-size: 18px !important;
-}
-</style>

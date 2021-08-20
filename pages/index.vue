@@ -37,7 +37,11 @@
               @delete="onAdd"
             ></MenuBtn>
 
-            <UserForm v-show="isFormShow" @submitted="onSubmit"></UserForm>
+            <UserForm
+              v-show="isFormShow"
+              @submitted="onSubmit"
+              @form-cancel="onFormCancel"
+            ></UserForm>
           </v-card>
 
           <UserTable :users="users"></UserTable>
@@ -75,6 +79,9 @@ export default {
   methods: {
     onSubmit(user) {
       users.unshift({ ...user, id: users.length })
+    },
+    onFormCancel() {
+      this.isFormShow = false
     },
     onAdd() {
       this.isFormShow = true

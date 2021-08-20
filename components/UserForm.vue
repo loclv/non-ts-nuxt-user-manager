@@ -14,7 +14,7 @@
 
         <v-col cols="12" md="4">
           <v-select
-            v-model="select"
+            v-model="selectedGender"
             :items="items"
             :rules="[(v) => !!v || 'Gender is required']"
             label="Item"
@@ -31,7 +31,7 @@
       >
         Submit
       </v-btn>
-      <v-btn class="form-item menu-item-w" color="success" @click="clear"
+      <v-btn class="form-item menu-item-w" color="error" @click="onCancel"
         >Cancel</v-btn
       >
     </v-container>
@@ -60,7 +60,7 @@ export default {
           v.length <= nameMaxLength ||
           `Name must be less than ${nameMaxLength} characters`,
       ],
-      select: null,
+      selectedGender: null,
       items: genders,
     }
   },
@@ -68,10 +68,19 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.$emit('submitted', { name: this.name, gender: this.select })
+        this.$emit('submitted', {
+          name: this.name,
+          gender: this.selectedGender,
+        })
       }
     },
-    clear() {},
+    onCancel() {
+      // reset form
+      this.name = ''
+      this.selectedGender = ''
+      this.$refs.form.resetValidation()
+      this.$emit('form-cancel')
+    },
   },
 }
 </script>
