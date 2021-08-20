@@ -23,9 +23,17 @@
         </v-col>
       </v-row>
 
-      <v-btn :disabled="!valid" color="success" class="" @click="validate">
+      <v-btn
+        class="form-item menu-item-w"
+        :disabled="!valid"
+        color="success"
+        @click="validate"
+      >
         Submit
       </v-btn>
+      <v-btn class="form-item menu-item-w" color="success" @click="clear"
+        >Cancel</v-btn
+      >
     </v-container>
   </v-form>
 </template>
@@ -63,6 +71,16 @@ export default {
         this.$emit('submitted', { name: this.name, gender: this.select })
       }
     },
+    clear() {},
   },
 }
 </script>
+
+<style scoped>
+.form-item {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  margin-right: 28px;
+}
+</style>

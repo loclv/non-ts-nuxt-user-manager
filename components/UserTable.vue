@@ -1,21 +1,15 @@
 <template>
-  <v-simple-table dark>
-    <template #default>
-      <thead>
-        <tr>
-          <th class="text-left table-header">Name</th>
-          <th class="text-left table-header">Gender</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr v-for="item in users" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>{{ item.gender }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
+  <v-data-table
+    v-model="selected"
+    dark
+    :headers="headers"
+    :items="desserts"
+    :single-select="true"
+    item-key="name"
+    show-select
+    class="elevation-1"
+  >
+  </v-data-table>
 </template>
 
 <script>
@@ -25,6 +19,21 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  data() {
+    return {
+      headers: [
+        {
+          text: 'Name',
+          align: 'start',
+          sortable: false,
+          value: 'name',
+        },
+        { text: 'Gender', value: 'gender' },
+      ],
+      desserts: this.users,
+      selected: [],
+    }
   },
 }
 </script>

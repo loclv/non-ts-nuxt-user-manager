@@ -1,6 +1,6 @@
 <template>
   <v-btn
-    class="menu-item"
+    class="ma-4 menu-item-w"
     :style="{ backgroundColor: color }"
     dark
     @click="onClick"
@@ -34,9 +34,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.menu-item {
+<style>
+.menu-item-w {
   width: 128px;
-  margin: 16px;
 }
 </style>
