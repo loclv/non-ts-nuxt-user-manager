@@ -44,11 +44,7 @@
         </v-container>
       </v-main>
 
-      <v-footer app dark>
-        <v-container>
-          <NuxtLink to="/about">About</NuxtLink>
-        </v-container>
-      </v-footer>
+      <Footer></Footer>
     </v-app>
   </main>
 </template>
@@ -96,15 +92,6 @@ export default {
 <style>
 .menu {
   margin-bottom: 6px;
-}
-
-.v-main {
-  background-color: var(--bg) !important;
-  color: var(--color) !important;
-}
-
-a {
-  color: var(--color-primary) !important;
 }
 
 .total-info-container {
