@@ -49,18 +49,24 @@ for (const property in GendersEnum) {
 const nameMaxLength = 36
 
 export default {
+  props: {
+    selectedItem: {
+      type: Object,
+      default: null,
+    },
+  },
   data() {
     return {
       nameMaxLength,
       valid: false,
-      name: '',
+      name: this.selectedItem?.name || '',
       nameRules: [
         (v) => !!v || 'Name is required',
         (v) =>
           v.length <= nameMaxLength ||
           `Name must be less than ${nameMaxLength} characters`,
       ],
-      selectedGender: null,
+      selectedGender: this.selectedItem?.gender || null,
       items: genders,
     }
   },

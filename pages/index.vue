@@ -39,12 +39,13 @@
 
             <UserForm
               v-show="isFormShow"
+              :selected-item="selectedItem"
               @submitted="onSubmit"
               @form-cancel="onFormCancel"
             ></UserForm>
           </v-card>
 
-          <UserTable :users="users"></UserTable>
+          <UserTable :users="users" @selected="onSelect"></UserTable>
         </v-container>
       </v-main>
 
@@ -63,6 +64,7 @@ export default {
     return {
       isFormShow: true,
       users,
+      selectedItem: null,
     }
   },
   computed: {
@@ -91,6 +93,15 @@ export default {
     },
     onDelete() {
       this.isFormShow = false
+    },
+    onSelect(e) {
+      if (e.value === true) {
+        // selected
+        this.selectedItem = e.item
+      } else {
+        // unselected
+        this.selectedItem = null
+      }
     },
   },
 }

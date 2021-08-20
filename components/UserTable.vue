@@ -8,6 +8,7 @@
     item-key="id"
     show-select
     class="elevation-1"
+    @item-selected="$emit('selected', $event)"
   >
   </v-data-table>
 </template>
