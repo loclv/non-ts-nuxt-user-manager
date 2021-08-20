@@ -40,7 +40,7 @@
             <UserForm v-show="isFormShow" @submitted="onSubmit"></UserForm>
           </v-card>
 
-          <SimpleTable :users="users"></SimpleTable>
+          <UserTable :users="users"></UserTable>
         </v-container>
       </v-main>
 

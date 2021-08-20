@@ -35,11 +35,16 @@ export default {
     '@nuxtjs/stylelint-module',
   ],
 
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['nuxt-webfontloader'],
   webfontloader: {
     google: {
-      families: ['Roboto:400,700'], // Loads Roboto font with weights 400 and 700
+      families: ['Roboto:400,700'],
     },
   },
 
