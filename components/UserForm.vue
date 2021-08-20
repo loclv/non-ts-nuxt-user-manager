@@ -14,7 +14,7 @@
 
         <v-col cols="12" md="4">
           <v-select
-            v-model="selectedGender"
+            v-model="gender"
             :items="items"
             :rules="[(v) => !!v || 'Gender is required']"
             label="Item"
@@ -41,33 +41,27 @@
 <script>
 import { GendersEnum } from '@/utilities/model'
 
-const genders = []
+const genderEnum = []
 for (const property in GendersEnum) {
-  genders.push(GendersEnum[property])
+  genderEnum.push(GendersEnum[property])
 }
 
 const nameMaxLength = 36
 
 export default {
-  props: {
-    selectedItem: {
-      type: Object,
-      default: null,
-    },
-  },
   data() {
     return {
       nameMaxLength,
       valid: false,
-      name: this.selectedItem?.name || '',
+      name: '',
       nameRules: [
         (v) => !!v || 'Name is required',
         (v) =>
           v.length <= nameMaxLength ||
           `Name must be less than ${nameMaxLength} characters`,
       ],
-      selectedGender: this.selectedItem?.gender || null,
-      items: genders,
+      gender: null,
+      items: genderEnum,
     }
   },
 
@@ -76,16 +70,24 @@ export default {
       if (this.$refs.form.validate()) {
         this.$emit('submitted', {
           name: this.name,
-          gender: this.selectedGender,
+          gender: this.gender,
         })
       }
     },
     onCancel() {
+      this.reset()
+      this.$emit('form-cancel')
+    },
+    set(user) {
+      const { name, gender } = user
+      this.name = name
+      this.gender = gender
+    },
+    reset() {
       // reset form
       this.name = ''
-      this.selectedGender = ''
+      this.gender = ''
       this.$refs.form.resetValidation()
-      this.$emit('form-cancel')
     },
   },
 }

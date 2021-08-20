@@ -41,7 +41,7 @@
 
             <UserForm
               v-show="isFormShow"
-              :selected-item="selectedItem"
+              ref="userFormRef"
               @submitted="onSubmit"
               @form-cancel="onFormCancel"
             ></UserForm>
@@ -88,6 +88,7 @@ export default {
       this.isFormShow = false
     },
     onAdd() {
+      this.$refs.userFormRef.reset()
       this.isFormShow = true
     },
     onEdit() {
@@ -107,6 +108,7 @@ export default {
       if (e.value === true) {
         // selected
         this.selectedItem = e.item
+        this.$refs.userFormRef.set(e.item)
       } else {
         // unselected
         this.selectedItem = null
