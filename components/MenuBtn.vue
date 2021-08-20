@@ -1,5 +1,10 @@
 <template>
-  <v-btn class="menu-item" :style="{ backgroundColor: color }" dark>
+  <v-btn
+    class="menu-item"
+    :style="{ backgroundColor: color }"
+    dark
+    @click="onClick"
+  >
     {{ title }}
     <v-icon dark right>{{ icon }}</v-icon>
   </v-btn>
@@ -19,6 +24,11 @@ export default {
     color: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    onClick() {
+      this.$emit('click', 'test')
     },
   },
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="count-info">
-    <div class="d-flex justify-start align-center">{{ title }} number:</div>
-    <div class="d-flex justify-end align-center">{{ count }}</div>
+    <div class="d-flex justify-start">{{ title }} number:</div>
+    <div class="d-flex justify-end">{{ count }}</div>
   </div>
 </template>
 
