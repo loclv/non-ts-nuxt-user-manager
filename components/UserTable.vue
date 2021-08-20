@@ -5,7 +5,7 @@
     :headers="headers"
     :items="desserts"
     :single-select="true"
-    item-key="name"
+    item-key="id"
     show-select
     class="elevation-1"
   >
