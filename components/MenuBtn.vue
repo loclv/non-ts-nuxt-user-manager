@@ -3,6 +3,7 @@
     class="ma-4 menu-item-w"
     :style="{ backgroundColor: color }"
     dark
+    :disabled="isDisabled"
     @click="onClick"
   >
     {{ title }}
@@ -24,6 +25,10 @@ export default {
     color: {
       type: String,
       required: true,
+    },
+    isDisabled: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

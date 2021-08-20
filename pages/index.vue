@@ -26,6 +26,7 @@
               title="edit"
               icon="mdi-account-edit"
               color="#00ACC1"
+              :is-disabled="!selectedItem"
               @click="onEdit"
               @edit="onAdd"
             ></MenuBtn>
@@ -33,6 +34,7 @@
               title="delete"
               icon="mdi-delete"
               color="#F4511E"
+              :is-disabled="!selectedItem"
               @click="onDelete"
               @delete="onAdd"
             ></MenuBtn>
@@ -93,6 +95,13 @@ export default {
     },
     onDelete() {
       this.isFormShow = false
+      const targetId = this.selectedItem.id
+      for (let i = users.length - 1; i >= 0; --i) {
+        if (users[i].id === targetId) {
+          users.splice(i, 1)
+          break
+        }
+      }
     },
     onSelect(e) {
       if (e.value === true) {
