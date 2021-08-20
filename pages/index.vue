@@ -59,13 +59,14 @@
 <script>
 import { GendersEnum } from '@/utilities/model'
 import { users } from '@/utilities/json'
-import { countGender } from '@/utilities'
+import { countGender, ModeEnum } from '@/utilities'
 
 export default {
   data() {
     return {
       isFormShow: true,
       users,
+      mode: ModeEnum.ADD,
       selectedItem: null,
     }
   },
@@ -90,9 +91,11 @@ export default {
     onAdd() {
       this.$refs.userFormRef.reset()
       this.isFormShow = true
+      this.mode = ModeEnum.ADD
     },
     onEdit() {
       this.isFormShow = true
+      this.mode = ModeEnum.EDIT
     },
     onDelete() {
       this.isFormShow = false
@@ -103,6 +106,7 @@ export default {
           break
         }
       }
+      this.mode = ModeEnum.DELETE
     },
     onSelect(e) {
       if (e.value === true) {
