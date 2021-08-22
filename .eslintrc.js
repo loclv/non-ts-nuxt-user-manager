@@ -19,5 +19,8 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-alert': 2,
+    'no-useless-concat': 2,
+    'prefer-template': 2,
+    'template-curly-spacing': 2,
   },
 }
