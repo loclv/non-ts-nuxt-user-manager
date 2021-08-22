@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import { v4 as uuidV4 } from 'uuid'
 import { GendersEnum } from '@/utilities/model'
 import { users } from '@/utilities/json'
 import { countGender, ModeEnum } from '@/utilities'
@@ -83,7 +84,7 @@ export default {
   },
   methods: {
     onSubmit(user) {
-      users.unshift({ ...user, id: users.length })
+      users.unshift({ ...user, id: uuidV4() })
     },
     onFormCancel() {
       this.isFormShow = false

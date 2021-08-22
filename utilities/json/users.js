@@ -1,3 +1,4 @@
+import { v4 as uuidV4 } from 'uuid'
 import { GendersEnum } from '@/utilities/model'
 
 const users = [
@@ -44,7 +45,7 @@ const users = [
 ]
 
 for (let i = 0; i < users.length; i++) {
-  users[i].id = i
+  users[i].id = uuidV4()
 }
 
 export { users }
