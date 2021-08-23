@@ -122,16 +122,18 @@ export default {
     },
     onEdit() {
       this.isFormShow = true
-      this.mode = ModeEnum.EDIT
-      if (this.selectedItem !== null) {
+      if (this.selectedItem !== null && this.mode !== ModeEnum.DELETE) {
         this.$refs.userFormRef.set(this.selectedItem)
       }
+      this.mode = ModeEnum.EDIT
     },
     onDelete() {
       this.isFormShow = false
       const id = this.selectedItem.id
       this.$store.commit('users/delete', { id })
       this.mode = ModeEnum.DELETE
+
+      this.selectedItem = null
     },
     onSelect(e) {
       if (e.value === true) {
