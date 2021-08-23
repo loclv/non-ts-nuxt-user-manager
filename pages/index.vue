@@ -15,39 +15,55 @@
           </div>
 
           <v-card class="menu" dark>
-            <MenuBtn
-              title="add"
-              icon="mdi-account-plus"
-              color="#6200EA"
-              @click="onAdd"
-              @add="onAdd"
-            />
-            <MenuBtn
-              title="edit"
-              icon="mdi-account-edit"
-              color="#00ACC1"
-              :is-disabled="!selectedItem"
-              @click="onEdit"
-              @edit="onAdd"
-            />
-            <MenuBtn
-              title="delete"
-              icon="mdi-delete"
-              color="#F4511E"
-              :is-disabled="!selectedItem"
-              @click="onDelete"
-              @delete="onAdd"
-            />
+            <v-card-actions>
+              <MenuBtn
+                title="add"
+                icon="mdi-account-plus"
+                color="#6200EA"
+                @click="onAdd"
+                @add="onAdd"
+              />
+              <MenuBtn
+                title="edit"
+                icon="mdi-account-edit"
+                color="#00ACC1"
+                :is-disabled="!selectedItem"
+                @click="onEdit"
+                @edit="onAdd"
+              />
+              <MenuBtn
+                title="delete"
+                icon="mdi-delete"
+                color="#F4511E"
+                :is-disabled="!selectedItem"
+                @click="onDelete"
+                @delete="onAdd"
+              />
 
-            <h2 v-show="isFormShow" class="ma-4">
-              {{ (mode === ModeEnum.ADD ? 'Add' : 'Edit') + ' user' }}
-            </h2>
-            <UserForm
-              v-show="isFormShow"
-              ref="userFormRef"
-              @submitted="onSubmit"
-              @form-cancel="onFormCancel"
-            />
+              <v-spacer></v-spacer>
+
+              <v-btn icon @click="isFormShow = !isFormShow">
+                <v-icon>{{
+                  isFormShow ? 'mdi-chevron-up' : 'mdi-chevron-down'
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
+
+            <v-expand-transition>
+              <div v-show="isFormShow">
+                <v-divider></v-divider>
+
+                <h2 class="ma-4">
+                  {{ (mode === ModeEnum.ADD ? 'Add' : 'Edit') + ' user' }}
+                </h2>
+
+                <UserForm
+                  ref="userFormRef"
+                  @submitted="onSubmit"
+                  @form-cancel="onFormCancel"
+                />
+              </div>
+            </v-expand-transition>
           </v-card>
 
           <UserTable :users="users" @selected="onSelect" />

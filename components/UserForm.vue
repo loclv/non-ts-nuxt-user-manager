@@ -33,14 +33,14 @@
       </v-row>
 
       <v-btn
-        class="form-item menu-item-w"
+        class="ma-4 menu-item-w"
         :disabled="!valid"
         color="success"
         @click="submit"
       >
         Submit
       </v-btn>
-      <v-btn class="form-item menu-item-w" color="error" @click="onCancel"
+      <v-btn class="ma-4 menu-item-w" color="error" @click="onCancel"
         >Cancel</v-btn
       >
     </v-container>
@@ -116,10 +116,10 @@ export default {
 </script>
 
 <style scoped>
-.form-item {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  margin-left: 4px;
-  margin-right: 28px;
+.form-btn {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 </style>
