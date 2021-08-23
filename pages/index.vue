@@ -8,10 +8,10 @@
       <v-main dark>
         <v-container dark>
           <div class="total-info-container">
-            <UserCount title="🧑‍🤝‍🧑 Users total" :count="users.length"></UserCount>
-            <UserCount title="💃 Woman users" :count="womanCount"></UserCount>
-            <UserCount title="🍺 Man users" :count="manCount"></UserCount>
-            <UserCount title="🏳️‍🌈 Other users" :count="otherCount"></UserCount>
+            <UserCount title="🧑‍🤝‍🧑 Users total" :count="users.length" />
+            <UserCount title="💃 Woman users" :count="womanCount" />
+            <UserCount title="🍺 Man users" :count="manCount" />
+            <UserCount title="🏳️‍🌈 Other users" :count="otherCount" />
           </div>
 
           <v-card class="menu" dark>
@@ -21,7 +21,7 @@
               color="#6200EA"
               @click="onAdd"
               @add="onAdd"
-            ></MenuBtn>
+            />
             <MenuBtn
               title="edit"
               icon="mdi-account-edit"
@@ -29,7 +29,7 @@
               :is-disabled="!selectedItem"
               @click="onEdit"
               @edit="onAdd"
-            ></MenuBtn>
+            />
             <MenuBtn
               title="delete"
               icon="mdi-delete"
@@ -37,7 +37,7 @@
               :is-disabled="!selectedItem"
               @click="onDelete"
               @delete="onAdd"
-            ></MenuBtn>
+            />
 
             <h2 v-show="isFormShow" class="ma-4">
               {{ (mode === ModeEnum.ADD ? 'Add' : 'Edit') + ' user' }}
@@ -47,14 +47,14 @@
               ref="userFormRef"
               @submitted="onSubmit"
               @form-cancel="onFormCancel"
-            ></UserForm>
+            />
           </v-card>
 
-          <UserTable :users="users" @selected="onSelect"></UserTable>
+          <UserTable :users="users" @selected="onSelect" />
         </v-container>
       </v-main>
 
-      <Footer></Footer>
+      <Footer />
     </v-app>
   </main>
 </template>
