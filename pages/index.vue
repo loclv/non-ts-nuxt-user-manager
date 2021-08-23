@@ -88,7 +88,6 @@ export default {
   },
   methods: {
     onSubmit(user) {
-      console.log('🚀 ~ user', user)
       if (this.mode === ModeEnum.ADD) {
         this.$store.commit('users/add', user)
       } else if (this.mode === ModeEnum.EDIT) {
