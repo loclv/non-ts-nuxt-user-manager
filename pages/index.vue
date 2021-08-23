@@ -60,23 +60,22 @@
 </template>
 
 <script>
-import { v4 as uuidV4 } from 'uuid'
-
 import { GendersEnum } from '@/utilities/model'
-import { users } from '@/utilities/json'
 import { countGender, ModeEnum } from '@/utilities'
 
 export default {
   data() {
     return {
       isFormShow: true,
-      users,
       mode: ModeEnum.ADD,
       ModeEnum,
       selectedItem: null,
     }
   },
   computed: {
+    users() {
+      return this.$store.state.users.users
+    },
     womanCount() {
       return countGender(this.users, GendersEnum.WOMAN)
     },
@@ -90,13 +89,11 @@ export default {
   methods: {
     onSubmit(user) {
       if (this.mode === ModeEnum.ADD) {
-        users.unshift({ ...user, id: uuidV4() })
+        this.$store.commit('users/add', user)
       } else if (this.mode === ModeEnum.EDIT) {
         const { name, gender } = user
         const id = this.selectedItem.id
-        const foundId = users.findIndex((item) => item.id === id)
-        users[foundId].name = name
-        users[foundId].gender = gender
+        this.$store.commit('users/edit', { id, name, gender })
       }
     },
     onFormCancel() {
@@ -113,13 +110,8 @@ export default {
     },
     onDelete() {
       this.isFormShow = false
-      const targetId = this.selectedItem.id
-      for (let i = users.length - 1; i >= 0; --i) {
-        if (users[i].id === targetId) {
-          users.splice(i, 1)
-          break
-        }
-      }
+      const id = this.selectedItem.id
+      this.$store.commit('users/delete', { id })
       this.mode = ModeEnum.DELETE
     },
     onSelect(e) {
