@@ -88,12 +88,13 @@ export default {
   },
   methods: {
     onSubmit(user) {
+      console.log('🚀 ~ user', user)
       if (this.mode === ModeEnum.ADD) {
         this.$store.commit('users/add', user)
       } else if (this.mode === ModeEnum.EDIT) {
-        const { name, gender } = user
+        const { name, gender, email } = user
         const id = this.selectedItem.id
-        this.$store.commit('users/edit', { id, name, gender })
+        this.$store.commit('users/edit', { id, name, gender, email })
       }
     },
     onFormCancel() {
@@ -107,6 +108,9 @@ export default {
     onEdit() {
       this.isFormShow = true
       this.mode = ModeEnum.EDIT
+      if (this.selectedItem !== null) {
+        this.$refs.userFormRef.set(this.selectedItem)
+      }
     },
     onDelete() {
       this.isFormShow = false

@@ -31,6 +31,7 @@ export default {
           value: 'name',
         },
         { text: 'Gender', value: 'gender' },
+        { text: 'E-mail', value: 'email' },
       ],
       desserts: this.users,
       selected: [],

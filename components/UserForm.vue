@@ -21,13 +21,22 @@
             required
           ></v-select>
         </v-col>
+
+        <v-col cols="12" md="4">
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="E-mail"
+            required
+          ></v-text-field>
+        </v-col>
       </v-row>
 
       <v-btn
         class="form-item menu-item-w"
         :disabled="!valid"
         color="success"
-        @click="validate"
+        @click="submit"
       >
         Submit
       </v-btn>
@@ -47,30 +56,41 @@ for (const property in GendersEnum) {
 }
 
 const nameMaxLength = 36
+const nullUser = {
+  name: '',
+  gender: null,
+  email: '',
+}
 
 export default {
   data() {
     return {
       nameMaxLength,
       valid: false,
-      name: '',
+      name: nullUser.name,
+      gender: nullUser.gender,
+      email: nullUser.email,
       nameRules: [
         (v) => !!v || 'Name is required',
         (v) =>
           v.length <= nameMaxLength ||
           `Name must be less than ${nameMaxLength} characters`,
       ],
-      gender: null,
+      emailRules: [
+        (v) => !!v || 'E-mail is required',
+        (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
       items: genderEnum,
     }
   },
 
   methods: {
-    validate() {
+    submit() {
       if (this.$refs.form.validate()) {
         this.$emit('submitted', {
           name: this.name,
           gender: this.gender,
+          email: this.email,
         })
       }
     },
@@ -79,14 +99,16 @@ export default {
       this.$emit('form-cancel')
     },
     set(user) {
-      const { name, gender } = user
+      const { name, gender, email } = user
       this.name = name
       this.gender = gender
+      this.email = email
     },
     reset() {
       // reset form
-      this.name = ''
-      this.gender = ''
+      this.name = nullUser.name
+      this.gender = nullUser.gender
+      this.email = nullUser.email
       this.$refs.form.resetValidation()
     },
   },

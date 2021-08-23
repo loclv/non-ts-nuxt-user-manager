@@ -7,11 +7,12 @@ export default {
       id: uuidV4(),
     })
   },
-  edit(state, { id, name, gender }) {
+  edit(state, { id, name, gender, email }) {
     const users = state.users
     const foundId = users.findIndex((item) => item.id === id)
     users[foundId].name = name
     users[foundId].gender = gender
+    users[foundId].email = email
   },
   delete(state, { id }) {
     const users = state.users
