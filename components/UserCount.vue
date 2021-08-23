@@ -1,7 +1,7 @@
 <template>
-  <div class="count-info">
-    <div class="d-flex justify-start">{{ title }} number:</div>
-    <div class="d-flex justify-end">{{ count }}</div>
+  <div class="count-info ma-4 d-flex" style="justify-content: space-between">
+    <div>{{ title }} number:</div>
+    <div>{{ count }}</div>
   </div>
 </template>
 

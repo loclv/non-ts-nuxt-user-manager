@@ -7,14 +7,20 @@
 
       <v-main dark>
         <v-container dark>
-          <div class="total-info-container">
-            <UserCount title="🧑‍🤝‍🧑 Users total" :count="users.length" />
-            <UserCount title="💃 Woman users" :count="womanCount" />
-            <UserCount title="🍺 Man users" :count="manCount" />
-            <UserCount title="🏳️‍🌈 Other users" :count="otherCount" />
+          <div class="ma-4">
+            <v-row>
+              <v-col cols="12" md="4">
+                <UserCount title="🧑‍🤝‍🧑 Users total" :count="users.length" />
+              </v-col>
+              <v-col cols="12" md="4" style="border-left-style: solid">
+                <UserCount title="💃 Woman users" :count="womanCount" />
+                <UserCount title="🍺 Man users" :count="manCount" />
+                <UserCount title="🏳️‍🌈 Other users" :count="otherCount" />
+              </v-col>
+            </v-row>
           </div>
 
-          <v-card class="menu" dark>
+          <v-card style="margin-bottom: 6px" dark>
             <v-card-actions>
               <MenuBtn
                 title="add"
@@ -152,13 +158,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.menu {
-  margin-bottom: 6px;
-}
-
-.total-info-container {
-  width: 222px;
-}
-</style>
