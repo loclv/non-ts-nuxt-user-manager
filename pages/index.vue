@@ -127,6 +127,10 @@ export default {
         // selected
         this.selectedItem = e.item
         this.$refs.userFormRef.set(e.item)
+        if (this.mode === ModeEnum.ADD) {
+          // turn form to edit mode
+          this.mode = ModeEnum.EDIT
+        }
       } else {
         // unselected
         this.selectedItem = null
