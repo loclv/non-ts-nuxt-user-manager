@@ -39,6 +39,9 @@
               @delete="onAdd"
             ></MenuBtn>
 
+            <h2 v-show="isFormShow" class="ma-4">
+              {{ (mode === ModeEnum.ADD ? 'Add' : 'Edit') + ' user' }}
+            </h2>
             <UserForm
               v-show="isFormShow"
               ref="userFormRef"
@@ -58,6 +61,7 @@
 
 <script>
 import { v4 as uuidV4 } from 'uuid'
+
 import { GendersEnum } from '@/utilities/model'
 import { users } from '@/utilities/json'
 import { countGender, ModeEnum } from '@/utilities'
@@ -68,6 +72,7 @@ export default {
       isFormShow: true,
       users,
       mode: ModeEnum.ADD,
+      ModeEnum,
       selectedItem: null,
     }
   },
@@ -84,7 +89,15 @@ export default {
   },
   methods: {
     onSubmit(user) {
-      users.unshift({ ...user, id: uuidV4() })
+      if (this.mode === ModeEnum.ADD) {
+        users.unshift({ ...user, id: uuidV4() })
+      } else if (this.mode === ModeEnum.EDIT) {
+        const { name, gender } = user
+        const id = this.selectedItem.id
+        const foundId = users.findIndex((item) => item.id === id)
+        users[foundId].name = name
+        users[foundId].gender = gender
+      }
     },
     onFormCancel() {
       this.isFormShow = false
