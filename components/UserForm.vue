@@ -114,12 +114,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.form-btn {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-</style>

@@ -10,6 +10,7 @@ Using:
 - [nuxt-webfontloader](https://github.com/Developmint/nuxt-webfontloader)
 - [Vuetify data tables - single selection mode](https://vuetifyjs.com/en/components/data-tables/#row-selection)
 - [Vuex](https://vuex.vuejs.org/)
+- [eslint-plugin-vue-scoped-css](https://future-architect.github.io/eslint-plugin-vue-scoped-css/)
 
 ## 🧑🏿‍💻 Build Setup
 
