@@ -74,15 +74,7 @@
 
           <UserTable :users="users" @selected="onSelect" />
 
-          <v-snackbar v-model="snackbar" :timeout="timeout">
-            {{ updatedInfo }}
-
-            <template #action="{ attrs }">
-              <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
-                Close
-              </v-btn>
-            </template>
-          </v-snackbar>
+          <Snackbar />
         </v-container>
       </v-main>
 
@@ -102,9 +94,6 @@ export default {
       mode: ModeEnum.ADD,
       ModeEnum,
       selectedItem: null,
-      snackbar: false,
-      updatedInfo: 'Added!',
-      timeout: 1600,
     }
   },
   computed: {
@@ -126,16 +115,16 @@ export default {
       if (this.mode === ModeEnum.ADD) {
         this.$store.commit('users/add', user)
 
-        this.updatedInfo = 'Added!'
+        this.$store.commit('snackbar/setInfo', 'Added!')
       } else if (this.mode === ModeEnum.EDIT) {
         const { name, gender, email } = user
         const id = this.selectedItem.id
         this.$store.commit('users/edit', { id, name, gender, email })
 
-        this.updatedInfo = 'Updated!'
+        this.$store.commit('snackbar/setInfo', 'Updated!')
       }
 
-      this.snackbar = true
+      this.$store.commit('snackbar/show')
     },
     onFormCancel() {
       this.isFormShow = false
@@ -160,8 +149,8 @@ export default {
 
       this.selectedItem = null
 
-      this.updatedInfo = 'Deleted!'
-      this.snackbar = true
+      this.$store.commit('snackbar/setInfo', 'Deleted!')
+      this.$store.commit('snackbar/show')
     },
     onSelect(e) {
       if (e.value === true) {
