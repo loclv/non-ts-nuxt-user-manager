@@ -9,6 +9,7 @@ Using:
 - [Vuetify Module for Nuxt.js](https://github.com/nuxt-community/vuetify-module)
 - [nuxt-webfontloader](https://github.com/Developmint/nuxt-webfontloader)
 - [Vuetify data tables - single selection mode](https://vuetifyjs.com/en/components/data-tables/#row-selection)
+- [Vuex](https://vuex.vuejs.org/)
 
 ## 🧑🏿‍💻 Build Setup
 
