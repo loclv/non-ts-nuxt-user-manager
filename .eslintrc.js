@@ -23,6 +23,8 @@ module.exports = {
     'no-useless-concat': 2,
     'prefer-template': 2,
     'template-curly-spacing': 2,
+    'vue/component-name-in-template-casing': [2, 'PascalCase'],
+    'vue/no-empty-component-block': 2,
     'vue-scoped-css/no-deprecated-v-enter-v-leave-class': 2,
     'vue-scoped-css/require-selector-used-inside': 2,
   },
