@@ -16,6 +16,11 @@ export default {
         name: 'description',
         content: 'User manager Nuxt without TypeScript for training',
       },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'User manager Nuxt without TypeScript for training',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
